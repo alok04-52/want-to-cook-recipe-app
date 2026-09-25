@@ -76,6 +76,23 @@ export default function RecipeDetailPage() {
             </div>
           </div>
 
+          {/* Find a cooking tutorial for the selected recipe. */}
+          <section>
+            <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <span>▶️</span> Watch How to Make It
+            </h3>
+            <a
+              href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${recipe.title} recipe how to make`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-4 transition-colors"
+              aria-label={`Watch cooking videos for ${recipe.title} on YouTube`}
+            >
+              ▶ Search cooking videos for {recipe.title} ↗
+            </a>
+            <p className="text-sm text-gray-500 mt-2">Opens YouTube videos for this recipe in a new tab.</p>
+          </section>
+
           {/* 🥦 सामग्री (Ingredients Section) */}
           <div>
             <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
